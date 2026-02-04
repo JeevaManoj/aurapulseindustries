@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraPulse Industries - SaaS Solutions</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='12' fill='%23667eea'/><circle cx='16' cy='16' r='6' fill='%23764ba2'/><circle cx='16' cy='16' r='2' fill='white'/></svg>" type="image/svg+xml">
+    <meta property="og:title" content="AuraPulse Industries - Transform Your Business">
+    <meta property="og:description" content="Cutting-edge SaaS solutions that drive innovation and accelerate growth. Lightning fast, enterprise security, scalable infrastructure.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/667eea/ffffff?text=AuraPulse+Industries">
+    <meta property="og:url" content="https://aurapulse.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AuraPulse Industries - Transform Your Business">
+    <meta name="twitter:description" content="Cutting-edge SaaS solutions that drive innovation and accelerate growth. Lightning fast, enterprise security, scalable infrastructure.">
+    <meta name="twitter:image" content="https://via.placeholder.com/1200x630/667eea/ffffff?text=AuraPulse+Industries">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .logo svg {
+            height: 100%;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s linear infinite;
+        }
+
+        .hero-animation {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            width: 200px;
+            height: 200px;
+            opacity: 0.3;
+        }
+
+        .pulse-circle {
+            position: absolute;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .pulse-circle:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 50px;
+            left: 50px;
+        }
+
+        .pulse-circle:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 25px;
+            left: 25px;
+            animation-delay: 1s;
+        }
+
+        .pulse-circle:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            top: 0;
+            left: 0;
+            animation-delay: 2s;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .about-image {
+            height: 300px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .character {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .center-node {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px rgba(255,255,255,0.5);
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .orbit {
+            position: absolute;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit-1 {
+            width: 100px;
+            height: 100px;
+            animation: rotate 10s linear infinite;
+        }
+
+        .orbit-2 {
+            width: 150px;
+            height: 150px;
+            animation: rotate 15s linear infinite reverse;
+        }
+
+        .orbit-3 {
+            width: 200px;
+            height: 200px;
+            animation: rotate 20s linear infinite;
+        }
+
+        .satellite {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255,255,255,0.7);
+        }
+
+        .satellite-1 {
+            top: -6px;
+            left: 44px;
+        }
+
+        .satellite-2 {
+            top: 69px;
+            right: -6px;
+        }
+
+        .satellite-3 {
+            bottom: -6px;
+            left: 94px;
+        }
+
+        .data-stream {
+            position: absolute;
+            width: 2px;
+            height: 30px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.8), transparent);
+            animation: stream 3s ease-in-out infinite;
+        }
+
+        .stream-1 {
+            top: 20px;
+            left: 60px;
+            animation-delay: 0s;
+        }
+
+        .stream-2 {
+            top: 80px;
+            right: 40px;
+            animation-delay: 1s;
+        }
+
+        .stream-3 {
+            bottom: 30px;
+            left: 120px;
+            animation-delay: 2s;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: #667eea;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+
+        .testimonial-author {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(255,255,255,0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255,255,255,0.8);
+            }
+        }
+
+        @keyframes float {
+            from {
+                transform: translateX(-100px);
+            }
+            to {
+                transform: translateX(calc(100vw + 100px));
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.4;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(255,255,255,0.5);
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(255,255,255,0.8);
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        @keyframes stream {
+            0% {
+                opacity: 0;
+                transform: translateY(0);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .features-grid, .services-grid, .testimonial-grid, .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <svg width="418" height="90" viewBox="0 0 418 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M321 66.162H330C335.662 47.0053 331 20.1794 331 0.162003C328.181 0.162309 323.023 -0.753246 321.028 1.7654C318.338 5.16192 320 14.0368 320 18.162C320 32.9192 316.819 52.0156 321 66.162ZM0 49.162L33 50.162L28 65.162H40C40.9327 61.226 42.1679 55.4801 45.4182 52.7654C49.6358 49.2428 65.7266 49.675 68.9144 54.3102C73.8591 61.5 81.0535 105.32 89.6921 81.162L92.3078 74.162C93.6082 70.521 94.9827 66.8889 96 63.162C104.911 69.1172 111.602 66.3166 120 61.162V65.162H130V23.162H119C119 29.9106 122.02 60.393 108.043 56.044C98.1 52.95 102 31.0704 102 23.162H91L91.7755 59.162L88 72.162C78.9212 55.111 74.197 34.3765 67.6921 16.162C65.3109 9.49432 60.9145 -1.76678 51.6489 5.17514C41.0527 13.114 45.4337 37.1219 33.7755 44.1342C25.6801 49.0034 4.08099 39.0099 0 49.162ZM223 4.16201L222.91 66.162L225 89.162H227C232.542 74.2969 234 60.8744 234 45.162C242.03 45.162 249.951 45.8434 256.985 41.1929C267.548 34.2098 269.448 16.8814 258.906 8.81095C249.325 1.47663 234.277 4.16201 223 4.16201ZM234 35.162V14.162C238.649 14.162 244.661 13.2163 248.906 15.4799C255.888 19.2032 255.28 29.2337 248.981 33.1528C244.576 35.893 238.956 35.162 234 35.162ZM57.9999 18.162L64.9999 42.162H47.9999L55.9999 18.162H57.9999ZM150 29.162V23.162H139V65.162H150C150 56.8395 147.703 44.1602 153.43 37.2708C156.675 33.3665 163.858 34.5303 165.655 30.0138C170.924 16.769 154.129 25.1324 150 29.162ZM201 60.162V65.162H211L212 23.162H201V28.162C198.26 25.7196 195.655 23.5808 192 22.6952C160.262 15.0057 161.329 74.9384 192 66.0494C195.638 64.9949 198.26 62.6531 201 60.162ZM363 35.162C376.158 25.5832 357.96 20.1554 349 22.966C346.81 23.653 344.798 24.7977 343.133 26.3866C334.636 34.5002 341.221 44.0015 350 47.7122C352.674 48.8424 358.793 50.3749 358.793 54.1474C358.793 62.8115 342.327 49.816 339.176 58.1697C337.392 62.8983 344.685 65.3366 348 66.2345C355.87 68.3661 366.699 66.566 370.142 58.1582C373.394 50.2178 367.998 43.8368 361 40.922C358.359 39.8219 350.936 38.4082 351.631 34.2662C352.647 28.2203 360.828 33.4286 363 35.162ZM387 48.162H418C417.928 39.4848 415.778 29.9584 407.996 24.8897C395.837 16.9698 379.025 25.6339 376.468 39.162C373.728 53.6526 382.565 67.0824 398 67.0833C402.084 67.0836 416.504 64.7105 414.654 58.1667C412.53 50.653 404.271 57.0619 400 57.5895C393.669 58.3715 388.891 53.71 387 48.162ZM272 23.162C272 36.2374 266.646 73.7435 291 66.1651C294.297 65.1392 297.092 62.9472 300 61.162V66.162L308.972 64.5231L310 53.162V23.162H299C299 31.1569 301.104 42.6844 297.991 50.1466C296.45 53.8402 292.275 57.6585 288.019 55.8781C279.182 52.1806 283 30.9621 283 23.162H272ZM407 40.162H387C389.908 28.0419 402.956 29.8851 407 40.162ZM188.001 32.6103C202.337 29.0509 205.317 52.7986 191.999 56.3179C178.323 59.932 175.362 35.7484 188.001 32.6103Z" fill="#fff"/>
+                </svg>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Business</h1>
+                <p>Cutting-edge SaaS solutions that drive innovation and accelerate growth</p>
+                <a href="#about" class="cta-button">Discover Our Solutions</a>
+            </div>
+            <div class="hero-animation">
+                <div class="pulse-circle"></div>
+                <div class="pulse-circle"></div>
+                <div class="pulse-circle"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Why Choose AuraPulse?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Experience unparalleled speed and performance with our optimized SaaS platform</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Enterprise Security</h3>
+                    <p>Bank-level security protocols ensure your data remains protected at all times</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Scalable Growth</h3>
+                    <p>Scale seamlessly from startup to enterprise with our flexible infrastructure</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About AuraPulse</h2>
+                    <p>We are a leading SaaS company dedicated to transforming businesses through innovative technology solutions. Our mission is to empower organizations with cutting-edge tools that drive efficiency, growth, and success.</p>
+                    <p>Founded with a vision to revolutionize the software industry, we combine expertise, innovation, and customer-centric approach to deliver exceptional value.</p>
+                </div>
+                <div class="about-image">
+                    <div class="character">
+                        <div class="center-node"></div>
+                        <div class="orbit orbit-1">
+                            <div class="satellite satellite-1"></div>
+                        </div>
+                        <div class="orbit orbit-2">
+                            <div class="satellite satellite-2"></div>
+                        </div>
+                        <div class="orbit orbit-3">
+                            <div class="satellite satellite-3"></div>
+                        </div>
+                        <div class="data-stream stream-1"></div>
+                        <div class="data-stream stream-2"></div>
+                        <div class="data-stream stream-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>⚡ Lightning Fast</h3>
+                    <p>Experience unparalleled speed and performance with our optimized SaaS platform</p>
+                </div>
+                <div class="service-item">
+                    <h3>🔒 Enterprise Security</h3>
+                    <p>Bank-level security protocols ensure your data remains protected at all times</p>
+                </div>
+                <div class="service-item">
+                    <h3>📈 Scalable Growth</h3>
+                    <p>Scale seamlessly from startup to enterprise with our flexible infrastructure</p>
+                </div>
+                <div class="service-item">
+                    <h3>📚 Knowledge Resources</h3>
+                    <p>Access comprehensive ebooks and digital resources for continuous learning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p>Ready to transform your business? Contact us today to learn more about our solutions.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <a href="mailto:jeevamanoj2000@gmail.com">jeevamanoj2000@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <h3>🌐 Solutions</h3>
+                    <p>Custom SaaS Development</p>
+                </div>
+                <div class="contact-item">
+                    <h3>⚡ Support</h3>
+                    <p>24/7 Technical Support<br>Dedicated Account Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AuraPulse Industries. Empowering businesses through innovative SaaS solutions.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0s';
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
